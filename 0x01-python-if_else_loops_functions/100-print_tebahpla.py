@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-for i in range(122, 96, -1):
-    if i % 2 == 0:
-        letter = chr(i).upper()
+output = ""
+upper = False
+
+for char in range(ord('z'), ord('a') - 1, -1):
+    if upper:
+        output += chr(char).upper()
     else:
-        letter = chr(i)
-    print("{}".format(letter), end='')
+        output += chr(char).lower()
+    upper = not upper
+
+print("{}".format(output), end="")
