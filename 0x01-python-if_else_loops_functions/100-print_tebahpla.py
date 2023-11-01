@@ -5,3 +5,6 @@ for i in range(ord('z'), ord('A') - 1, -1):
     else:
         letter = chr(i).upper()
     print("{}".format(letter), end='')
+
+
+print()
