@@ -4,12 +4,11 @@ def max_integer(my_list=[]):
 
     if len(my_list) == 0:
         return None
-# Initialize a variable to store the maximum value
+    # Initialize a variable to store the maximum value
 
-
-max_val = my_list[0]
-# Iterate through the list to find the maximum value
-for num in my_list:
-    if num > max_val:
-        max_val = num
-return max_val
+    max_val = my_list[0]
+    # Iterate through the list to find the maximum value
+    for num in my_list:
+        if num > max_val:
+            max_val = num
+            return max_val
