@@ -9,4 +9,4 @@ def print_matrix_integer(matrix=[[]]):
             else:
                 # Space after each element except the last one
                 print("{:d} ".format(num), end="")
-                print()
+        print()
