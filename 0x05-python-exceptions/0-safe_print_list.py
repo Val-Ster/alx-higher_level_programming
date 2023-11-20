@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-
-my_list=[1,'cat',3,'mouse',5,8,]
-x=0
-
-def print_list(list,X):
+def safe_print_list(my_list=[], x=0):
     try:
-        num_of_ele=0
-        for x in list:
-            print(x)
-            num_of_ele=num_of_ele+1
-            print("number",num_of_ele)
+        count = 0
+        for i in range(x):
+            print("{}".format(my_list[i]), end="")
+            count += 1
+        print()
+        return count
     except IndexError:
-        print('invalid')
-
-print_list(my_list,x)
+        print()
+        return count
