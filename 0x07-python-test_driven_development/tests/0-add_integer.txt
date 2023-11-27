@@ -1,0 +1,81 @@
+=================
+0-add_integer.txt
+=================
+
+This module defines a function  ''def add_integer(a, b=98)'' 
+its purpose is to adds two integers
+
+Numbers
+=======
+
+''add_integer(...)'' returns the addition of its arguments. The value is equivalent to using the ''+'' operator.
+
+::
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(5, 1)  # Performing a successful test to show the comp. what it would look like
+	6
+
+
+::
+	>>> add_integer(3, -1)
+	2
+
+:: 
+	>>> add_integer(-3, 2)
+	-1
+
+
+::
+	>>> add_integer(2, -3)
+	-1
+
+''add_integer(...)'' also works with floating-point values.
+Floats are type-casted to integers before they are added.
+
+::
+	>>> add_integer(3.0, 5.9)
+	8
+
+
+To ensure that it handles extreme inputs correctly 
+
+::
+	>>> add_integer(0, 0)
+	0
+
+::
+	>>> add_integer(1, -1)
+	0
+
+::
+	>>> add_integer(10, 3.5)
+	13
+
+::
+	>>> add_integer(2)
+	100
+
+
+Non-Numbers  # I dont think adding this non-numbers part is relevent but i will add it anyways.
+=========== 
+Test cases where the function is expected to raise a TypeError. 
+This includes cases where a or b is not an integer or float.
+
+::
+	>>> add_integer(3, "name")
+	Traceback (most recent call last):
+	 ...
+	TypeError: b must be an integer or float
+
+::
+	>>> add_integer('Valerie', 7)
+	Traceback (most recent call last):
+	 ...
+	TypeError: a must be an integer or float
+
+
+::
+	>>> add_integer("words")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer or float
