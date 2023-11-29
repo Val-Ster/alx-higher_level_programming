@@ -1,0 +1,57 @@
+=================
+3-say_my_name.txt
+=================
+
+This module defines the function ''say_my_name(first_name, last_name="")'', it prints ''My name is <first name> <last name>'' where <first name> is the person's first name and last name as the last name.
+
+=======
+strings
+=======
+
+''say_my_name(...)'' returns the string arguments passed to it and only takes the string data type, else, raises a type error.
+
+::
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("Valerie ", " Star")
+	My name is Valerie Star
+	
+If only one or no arguments was passed.
+The function sets the default empty string if the second argument is empty and an error if the first argument is empty
+
+
+::
+	>>> say_my_name( "", "Daniel")
+	Traceback (most recent call last):
+	  ...
+	ValueError: first_name can't be empty string
+	 
+	 
+::
+	>>> say_my_name("David", "")
+	My name is David 
+	
+
+::
+	>>> say_my_name("", "")
+	Traceback (most recent call last):
+	  ...
+	ValueError: first_name can't be empty string
+	
+	
+===========
+Non-Strings
+===========
+
+Here, we test for cases where non-strings are inputted.
+
+::
+	>>> say_my_name(98, "Huclark")
+	Traceback (most recent call last):
+	  ...
+	TypeError: first_name must be a string
+	
+::
+	>>> say_my_name("Rebecca", None)
+	Traceback (most recent call last):
+	  ...
+	TypeError: last_name must be a string
