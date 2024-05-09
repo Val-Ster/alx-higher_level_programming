@@ -12,18 +12,24 @@ def find_peak(list_of_integers):
         list_of_integers (list): A list of unsorted integers.
 
     Returns:
-        int: The peak element in the list.
+        int: A peak element in the list.
     """
     if not list_of_integers:
         return None
 
-    low, high = 0, len(list_of_integers) - 1
+    length = len(list_of_integers)
 
-    while low != high:
-        mid = (low + high) // 2
-        if list_of_integers[mid] < list_of_integers[mid + 1]:
-            low = mid + 1
-        else:
-            high = mid
+    if length == 1:
+        return list_of_integers[0]
 
-    return list_of_integers[low]
+    if list_of_integers[0] >= list_of_integers[1]:
+        return list_of_integers[0]
+
+    if list_of_integers[length - 1] >= list_of_integers[length - 2]:
+        return list_of_integers[length - 1]
+
+    for i in range(1, length - 1):
+        if list_of_integers[i] >= list_of_integers[i - 1] and list_of_integers[i] >= list_of_integers[i + 1]:
+            return list_of_integers[i]
+
+    return None
